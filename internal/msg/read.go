@@ -29,7 +29,7 @@ func (m *Tread) Read(b []byte) (int, error) {
 	b[0] = KindTread
 	b[1] = m.Tag
 	copy(b[2:], m.Score)
-	b[sz-6] = m.Type
+	b[sz-6] = toDiskType(m.Type)
 	b[sz-5] = m.Pad
 	pack.Uint32(b[sz-4:], m.Count)
 	return sz, io.EOF
@@ -39,7 +39,7 @@ func (m *Tread) Write(b []byte) (int, error) {
 	m.Tag = b[0]
 	m.Score = make([]byte, len(b)-7)
 	copy(m.Score, b[1:len(b)-6])
-	m.Type = b[len(b)-6]
+	m.Type = fromDiskType(b[len(b)-6])
 	m.Pad = b[len(b)-5]
 	_, m.Count = pack.UnUint32(b[len(b)-4:])
 	return len(b), nil

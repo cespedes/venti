@@ -22,7 +22,7 @@ func (m *Twrite) Read(b []byte) (int, error) {
 	}
 	b[0] = KindTwrite
 	b[1] = m.Tag
-	b[2] = m.Type
+	b[2] = toDiskType(m.Type)
 	b[3] = 0x00
 	b[4] = 0x00
 	b[5] = 0x00
@@ -34,7 +34,7 @@ func (m *Twrite) Write(b []byte) (int, error) {
 		return 0, io.ErrShortWrite
 	}
 	m.Tag = b[0]
-	m.Type = b[1]
+	m.Type = fromDiskType(b[1])
 	copy(m.Pad[:], b[2:])
 	return 5, nil
 }
