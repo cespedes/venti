@@ -160,6 +160,9 @@ func (c *Client) Read(t Type, s Score, ct int64) (io.ReadCloser, error) {
 	if c.err != nil {
 		return nil, c.err
 	}
+	if len(s) != 20 {
+		return nil, fmt.Errorf("bad score")
+	}
 	if ct < 0 {
 		return nil, fmt.Errorf("bad count")
 	}
