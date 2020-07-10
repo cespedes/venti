@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/hdonnay/venti/internal/pack"
+	"github.com/cespedes/venti/internal/pack"
 )
 
 // Tread is VtTread.

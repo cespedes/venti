@@ -12,8 +12,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/hdonnay/venti/internal/msg"
-	"github.com/hdonnay/venti/internal/pack"
+	"github.com/cespedes/venti/internal/msg"
+	"github.com/cespedes/venti/internal/pack"
 )
 
 func Dial(addr string) (*Client, error) {

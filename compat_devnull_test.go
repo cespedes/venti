@@ -15,7 +15,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/hdonnay/venti"
+	"github.com/cespedes/venti"
 )
 
 func TestDevnullWrites(t *testing.T) {

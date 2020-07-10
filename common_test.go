@@ -13,8 +13,8 @@ import (
 	"net"
 	"testing"
 
-	"github.com/hdonnay/venti"
-	"github.com/hdonnay/venti/ventitest"
+	"github.com/cespedes/venti"
+	"github.com/cespedes/venti/ventitest"
 )
 
 // This file has bits common to the normal tests and the compatability tests.

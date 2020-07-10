@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/hdonnay/venti/internal/msg"
+	"github.com/cespedes/venti/internal/msg"
 )
 
 var (

@@ -12,7 +12,7 @@ import (
 	"io"
 	"sync"
 
-	"github.com/hdonnay/venti"
+	"github.com/cespedes/venti"
 )
 
 var zeroScore = make([]byte, 20)

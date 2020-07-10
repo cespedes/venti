@@ -18,7 +18,7 @@ import (
 	"net"
 	"os"
 
-	"github.com/hdonnay/venti"
+	"github.com/cespedes/venti"
 )
 
 var (

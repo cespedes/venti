@@ -10,8 +10,8 @@ import (
 	"io"
 	"testing"
 
-	"github.com/hdonnay/venti"
-	"github.com/hdonnay/venti/ventitest"
+	"github.com/cespedes/venti"
+	"github.com/cespedes/venti/ventitest"
 )
 
 func TestWrite(t *testing.T) {

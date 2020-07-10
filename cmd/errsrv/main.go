@@ -11,8 +11,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/hdonnay/venti"
-	"github.com/hdonnay/venti/ventitest"
+	"github.com/cespedes/venti"
+	"github.com/cespedes/venti/ventitest"
 )
 
 var (

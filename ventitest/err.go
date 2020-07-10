@@ -7,7 +7,7 @@ package ventitest
 import (
 	"io"
 
-	"github.com/hdonnay/venti"
+	"github.com/cespedes/venti"
 )
 
 func NewErrFS(err error) *ErrFS {
