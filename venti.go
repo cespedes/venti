@@ -5,7 +5,10 @@
 // Package venti is a group of libraries for writing venti(7) servers.
 package venti
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 var vers = []string{"04"}
 
@@ -19,6 +22,7 @@ const MaxFileSize = (1 << 48) - 1
 // Currently the score function clients recognize is SHA1.
 type Score []byte
 
+// String returns the hex representation of a score
 func (s Score) String() string {
 	switch len(s) {
 	case 20:
@@ -27,6 +31,22 @@ func (s Score) String() string {
 		return "nil"
 	}
 	return fmt.Sprintf("???!%x", string(s))
+}
+
+// ParseScore returns a score from its hex representation
+func ParseScore(s string) (Score, error) {
+	var score Score
+	if len(s) != 40 {
+		return score, fmt.Errorf("cannot parse score %q", s)
+	}
+	for i := 0; i < 20; i++ {
+		i, err := strconv.ParseInt(s[2*i:2*i+2], 16, 16)
+		if err != nil {
+			return score, fmt.Errorf("cannot parse score %q", s)
+		}
+		score = append(score, byte(i))
+	}
+	return score, nil
 }
 
 // Entry is a stub from libventi.h
